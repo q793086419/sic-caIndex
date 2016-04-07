@@ -134,7 +134,7 @@ a{ text-decoration:none;}
 .banner{width: 100%; content: ''; display: block; clear: both;}
 .logo{width: 6.5625rem; position: absolute; left: 1.5625rem; top: 1.5625rem;}
 
-
+.overflowHidden{overflow:  hidden; width: calc(100% - 6rem); background: none; white-space: nowrap; text-overflow: ellipsis; border:none;padding: 0;}
 .nav div{padding: 0.6rem; margin:0 1rem 1rem 1rem; background: url(../images/index_nav.png) no-repeat; background-size: 100% 100%;}
 .nav p{ margin:0 0 0.3rem 0;font-size: 2rem; font-weight: 700; text-indent: 2.5rem;}
 .nav span{ margin:0; display: inline-block; color: #cc1717; margin-right: 1.125rem; margin-left: 1.125rem; font-size: 1.5rem;}
