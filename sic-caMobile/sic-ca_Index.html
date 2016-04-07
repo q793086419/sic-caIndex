@@ -7,18 +7,18 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<script type="text/javascript" src="js/js.js"></script>
 	<script type="text/javascript">
-var myScroll;
+	var myScroll;
 
-function loaded() {
-myScroll = new iScroll('wrapper', {
-snap: true,
-momentum: false,
-hScrollbar: false,
-onScrollEnd: function () {
-document.querySelector('#indicator > li.active').className = '';
-document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
-}
- });
+	function loaded() {
+	myScroll = new iScroll('wrapper', {
+	snap: true,
+	momentum: false,
+	hScrollbar: false,
+	onScrollEnd: function () {
+	document.querySelector('#indicator > li.active').className = '';
+	document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+	}
+ 	});
  
  
 }
