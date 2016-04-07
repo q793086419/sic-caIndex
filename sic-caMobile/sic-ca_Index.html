@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no,target-densitydpi=medium-dpi" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script type="text/javascript" src="js/js.js"></script>
+	<script type="text/javascript">
+var myScroll;
+
+function loaded() {
+myScroll = new iScroll('wrapper', {
+snap: true,
+momentum: false,
+hScrollbar: false,
+onScrollEnd: function () {
+document.querySelector('#indicator > li.active').className = '';
+document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+}
+ });
+ 
+ 
+}
+
+document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
+</head>
+<body>
+	<header class="banner">
+		<img src="images/index_logo.png" class="logo" />	
+		<div class="banner">
+			<div id="wrapper">
+				<div id="scroller">
+					<ul id="thelist">
+						<li>
+							<p>1111</p>
+							<a href="">
+								<img src="images/index_banner.png" />	
+							</a>
+						</li>
+						<li>
+							<p>2222</p>
+							<a href="">
+								<img src="images/index_banner.png" />	
+							</a>
+						</li>
+						<li>
+							<p>3333</p>
+							<a href="http://">
+								<img src="images/index_banner.png" />	
+							</a>
+						</li>
+						<li>
+							<p>4444</p>
+							<a href="">
+								<img src="images/index_banner.png" />	
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="nav">
+				<div id="prev" onclick="myScroll.scrollToPage('prev', 0,400,2);return false">&larr; prev</div>
+				<ul id="indicator">
+					<li class="active" ></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div id="next" onclick="myScroll.scrollToPage('next', 0,400,2);return false">next &rarr;</div>
+			</div>
+			<div class="clr"></div>
+		</div>
+		<script>
+var count = document.getElementById("thelist").getElementsByTagName("img").length;	
+
+var count2 = document.getElementsByClassName("menuimg").length;
+for(i=0;i<count;i++){
+ document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+
+}
+document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+
+ setInterval(function(){
+myScroll.scrollToPage('next', 0,400,count);
+},3500 );
+window.onresize = function(){ 
+for(i=0;i<count;i++){
+document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+
+}
+ document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+} 
+
+
+</script>
+		<!--
+		<img src="images/index_banner.png" class="banner_img" />
+		<div class="banner_font">
+			<span class="banner_span">安全客户端DocMail</span>
+			<ul class="banner_ul">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li id="li_checked"></li>
+			</ul>
+		</div>
+		-->
+	</header>
+	<article class="nav">
+		<div>
+			<p>安全产品</p>
+			<span>软件产品</span><em>|</em><span>硬件产品</span>
+		</div>
+		<div>
+			<p>行业方案</p>
+			<span>自建</span><em>|</em><span>租用</span>
+		</div>
+		<div>
+			<p>服务中心</p>
+			<span>邮件医院</span>
+		</div>
+		<div>
+			<p>新闻中心</p>
+			<span>公司新闻</span><em>|</em><span>公司大事记</span>
+		</div>
+		<div>
+			<p>客户合作</p>
+			<span>客户案例</span><em>|</em><span>战略合作</span><em>|</em><span>业务合作</span>
+		</div>
+		<div>
+			<p>关于我们</p>
+			<span>公司介绍</span><em>|</em><span>招贤纳士</span>
+		</div>
+	</article>
+	<footer>
+		<div class="fdiv"><img class="fimg1" src="images/index_home.png"/>	</div>
+		<img class="fimg2"src="images/index_phone.png"/>	
+		<img class="fimg3"src="images/index_try.png"/>	
+	</footer>
+</body>
+</html>
